@@ -1,14 +1,21 @@
 {
-  "name": "ts_backend",
+  "name": "typescript-express-postgresql-boilerplate",
+  "email": "coldsewoo@gmail.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "boilerplate for backend based on typescript, express, postgresql",
+  "main": "server.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "boilerplate",
+    "typescript",
+    "express",
+    "postgresql"
+  ],
+  "author": "coldsewoo",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "class-transformer": "^0.2.3",
