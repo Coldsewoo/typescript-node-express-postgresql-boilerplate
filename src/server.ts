@@ -7,8 +7,8 @@ import App from './app'
 import postsController from './routes/posts/post.controller'
 
 // dotenv validation
-validateEnv()
-;(async () => {
+validateEnv();
+(async () => {
   try {
     // Connect to Database before listening to the main PORT
     await createConnection(ormConfig)

@@ -22,7 +22,7 @@ export default class App {
     this.initializeErrorHandling()
   }
 
-  public listen(): void {
+  public listen() {
     const PORT: number = Number(process.env.PORT) || 5000
     this.app.listen(PORT, () => {
       console.log(`App listenling on the port ${PORT}`)
@@ -55,7 +55,7 @@ export default class App {
   }
 
   private initializeControllers(controllers: Controller[]): void {
-    controllers.forEach(controller => {
+    controllers.forEach((controller) => {
       this.app.use('/', controller.router)
     })
   }
@@ -79,7 +79,7 @@ export default class App {
       rateLimiterRedis
         .consume(req.ip)
         .then(() => next())
-        .catch(err => {
+        .catch((err) => {
           next(new TooManyRequests())
         })
     }
