@@ -8,7 +8,7 @@ import { Request, Response, NextFunction } from 'express'
 import Controller from './interfaces/controller.interface'
 import errorMiddleware from './middleware/error.middleware'
 import redisConfig from './config/redisconfig'
-import redisconfig from './config/redisconfig'
+import TooManyRequests from './exceptions/TooManyRequests'
 
 export default class App {
   public app: express.Application
@@ -71,8 +71,8 @@ export default class App {
     })
     const rateLimiterRedis = new RateLimiterRedis({
       storeClient: redisClient,
-      points: redisconfig.points,
-      duration: redisconfig.duration,
+      points: redisConfig.points,
+      duration: redisConfig.duration,
     })
 
     const rateLimiterMiddleware = (req: Request, res: Response, next: NextFunction) => {
@@ -80,7 +80,7 @@ export default class App {
         .consume(req.ip)
         .then(() => next())
         .catch(err => {
-          res.status(429).send('Too Many Requests')
+          next(new TooManyRequests())
         })
     }
     this.app.use(rateLimiterMiddleware)
