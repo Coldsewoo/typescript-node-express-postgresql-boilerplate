@@ -10,10 +10,6 @@
 
 - #### npm run dev (for Development)
 
-- #### npm run start (for Production)
+- #### npm run build (for Production)
 
-#### Source files are in /src, and will be complied at /dist
-
-## Basic Structure
-
-### TO BE WRITTEN HERE
+#### Source files exist in /src, and will be complied at /dist
