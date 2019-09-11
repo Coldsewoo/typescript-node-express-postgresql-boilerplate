@@ -76,7 +76,8 @@ export default class PostsController implements Controller {
       } else {
         next(new NotFound('Post'))
       }
-    } catch {
+    } catch (err) {
+      console.log(err)
       next(new InternalServerError())
     }
   }

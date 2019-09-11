@@ -9,7 +9,7 @@ export default function validationMiddleware<T>(type: any, skipMissingProperties
       if (errors.length > 0) {
         const message = errors
           .map((error: ValidationError) => {
-            Object.values(error.constraints)
+            return Object.values(error.constraints)
           })
           .join(', ')
         next(new HttpException(400, message))

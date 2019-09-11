@@ -1,14 +1,17 @@
-import { cleanEnv, str, port } from 'envalid'
+import { cleanEnv, str, port, bool } from 'envalid'
 
 function validateEnv() {
   cleanEnv(process.env, {
-    PORT: port(),
-    MAINTAINER_NAME: str(),
-    POSTGRES_HOST: str(),
-    POSTGRES_PORT: port(),
-    POSTGRES_USER: str(),
-    POSTGRES_PASSWORD: str(),
-    POSTGRES_DB: str(),
+    APP_PORT: port(),
+    APP_HOST: str(),
+    APP_MAINTAINER: str(),
+    TYPEORM_CONNECTION: str(),
+    TYPEORM_HOST: str(),
+    TYPEORM_PORT: port(),
+    TYPEORM_USERNAME: str(),
+    TYPEORM_PASSWORD: str(),
+    TYPEORM_DATABASE: str(),
+    TYPEORM_SYNCHRONIZE: bool(),
   })
 }
 

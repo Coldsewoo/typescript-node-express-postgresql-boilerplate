@@ -10,7 +10,9 @@
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "module": "commonjs"
+    "module": "commonjs",
+    "typeRoots": ["./node_modules/@types", "./typings/*.d.ts"],
+    "types": ["node"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
