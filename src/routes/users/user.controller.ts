@@ -5,8 +5,8 @@ import Controller from '../../interfaces/controller.interface'
 import CreateUserDto from "./user.dto"
 import User from "./user.entity"
 import validationMiddleware from "../../middleware/validation.middleware"
-import InternalServerError from "../../exceptions/InternalServerError"
-import NotFound from "../../exceptions/NotFound"
+import { InternalServerError, NotFound } from "../../exceptions/HttpException"
+
 
 export default class UsersController implements Controller {
   public path = '/users'

@@ -8,7 +8,7 @@ import { Request, Response, NextFunction } from 'express'
 import Controller from './interfaces/controller.interface'
 import errorMiddleware from './middleware/error.middleware'
 import redisConfig from './config/redisconfig'
-import TooManyRequests from './exceptions/TooManyRequests'
+import { TooManyRequests } from './exceptions/HttpException'
 
 export default class App {
   public app: express.Application

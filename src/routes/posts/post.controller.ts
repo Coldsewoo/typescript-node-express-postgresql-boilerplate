@@ -5,8 +5,7 @@ import Controller from '../../interfaces/controller.interface'
 import CreatePostDto from './post.dto'
 import Post from './post.entity'
 import validationMiddleware from '../../middleware/validation.middleware'
-import InternalServerError from '../../exceptions/InternalServerError'
-import NotFound from '../../exceptions/NotFound'
+import { InternalServerError, NotFound } from "../../exceptions/HttpException"
 
 export default class PostsController implements Controller {
   public path = '/posts'
