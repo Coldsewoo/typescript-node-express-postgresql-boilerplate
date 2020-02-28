@@ -13,3 +13,5 @@
 - #### npm run build (for Production)
 
 #### Source files exist in /src, and will be complied at /dist
+
+## Made by Coldsewoo (coldsewoo@gmail.com)
